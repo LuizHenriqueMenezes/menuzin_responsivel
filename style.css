@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: #161616;
+    padding: 0 20px;
+    /* esse comando da um espaço entre os componentes */
+    justify-content: space-between;
+    /*---*/
+    align-items: center;
+}
+
+ul {
+    /*tira o style da ul*/
+    list-style: none;
+    /*---*/
+    padding: 0;
+}
+
+li {
+    /*0-> vertical 20-> horizontal*/
+    padding: 0 20px;
+}
+
+h1,
+p {
+    color: #fff;
+}
+
+/* mudar a direção das palavras */
+nav,
+ul {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px;
+}
+
+button{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 36px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+}
+
+/* "O hover permite a criação de diversos efeitos interessantes em uma página HTML." */
+li:hover,
+h1:hover,
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+button:focus ~ ul{
+    height: 260px;
+}
+
+/* "@media funciona para você determinar um estilo CSS para cada tipo de mídia que te interessar" */
+@media(max-width: 700px){
+    nav, ul{
+        flex-direction: column;
+    }
+
+    ul{
+        text-align: center;
+        margin: 0;
+        height: 0;
+    }
+
+    nav{
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    h1{
+        margin: 10px;
+    }
+
+    button{
+        display: flex;
+    }
+
+    li, ul{
+        width: 100%;
+    }
+}
